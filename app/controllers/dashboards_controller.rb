@@ -14,6 +14,8 @@ class DashboardsController < ApplicationController
   end
 
   def dashboard_4_1
+        @projects = Project.all
+
   end
 
   def dashboard_5

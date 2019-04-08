@@ -236,7 +236,7 @@
             <thead>
             <tr>
 
-                <th>#</th>
+                <th>S.no.</th>
                 <th>Project </th>
                 <th>Name </th>
                 <th>Phone </th>
@@ -248,18 +248,31 @@
             </tr>
             </thead>
             <tbody>
+                <% @projects.each do |project| %>
             <tr>
-                <td>1</td>
-                <td>Project <small>This is example of project</small></td>
-                <td>Patrick Smith</td>
-                <td>0800 051213</td>
-                <td>Inceptos Hymenaeos Ltd</td>
-                <td><span class="pie">0.52/1.561</span></td>
-                <td>20%</td>
-                <td>Jul 14, 2013</td>
-                <td><a href="#"><i class="fa fa-check text-navy"></i></a></td>
-            </tr>
-            <tr>
+                <td><%= project.id %> </td>
+                <small><td><%= project.project %> </small></td>
+                <td><%= project.name %> </td>
+                <td><%= project.phone %> </td>
+                <td><%= project.company %> </td>
+                <td><span class="pie"><%= project.completed %> </span></td>
+                <td><%= project.task %> </td>
+                <td><%= project.date %> </td>
+                <td>
+                    <% if project.action == true %>
+                    <a href="#"><i class="fa fa-check text-navy"></i></a>
+
+                    <%end %>
+                    <% if project.action == false %>
+                     <a href="#">
+                    <i class="fa fa-times" aria-hidden="true"></i>
+
+                    
+                    <%end%>
+                </td>
+            </tr> 
+            <% end %>
+           <!--  <tr>
                 <td>2</td>
                 <td>Alpha project</td>
                 <td>Alice Jackson</td>
@@ -401,7 +414,7 @@
                 <td>18%</td>
                 <td>Jul 22, 2013</td>
                 <td><a href="#"><i class="fa fa-check text-navy"></i></a></td>
-            </tr>
+            </tr> -->
             </tbody>
         </table>
     </div>

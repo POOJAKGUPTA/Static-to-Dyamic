@@ -6,8 +6,7 @@ gem 'bootstrap-sass', '~> 3.3.6'
 gem 'font-awesome-rails', '4.3.0.0'
 
 # Use sqlite3 as the database for Active Record
-gem 'pg'
-
+gem 'pg','~> 0.18'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0.4'
 
@@ -19,12 +18,16 @@ gem 'coffee-rails', '~> 4.0.0'
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
+gem 'devise'
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
+ gem 'json'
+gem 'activeadmin'
+
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.

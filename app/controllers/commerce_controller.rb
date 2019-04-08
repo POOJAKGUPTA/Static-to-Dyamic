@@ -3,6 +3,7 @@ class CommerceController < ApplicationController
   end
 
   def products_list
+    @products = ProductList.all
   end
 
   def product_edit
