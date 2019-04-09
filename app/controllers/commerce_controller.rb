@@ -1,4 +1,6 @@
 class CommerceController < ApplicationController
+  
+
   def products_grid
   end
 
@@ -13,6 +15,7 @@ class CommerceController < ApplicationController
   end
 
   def product_detail
+    @products = ProductList.all
   end
 
   def payments
@@ -21,5 +24,10 @@ class CommerceController < ApplicationController
   def cart
   end
 
+  def add_to_cart
+    @product = ProductList.find(params[:id])
+    current_cart.add_item(@product)
+    redirect_to "/commerce/cart"
+  end
 
 end

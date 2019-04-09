@@ -26,12 +26,12 @@
 
         <div class="ibox">
             <div class="ibox-title">
-                <span class="pull-right">(<strong>5</strong>) items</span>
+                <span class="pull-right">(<strong><%= current_cart.cart_items.count %></strong>) items</span>
                 <h5>Items in your cart</h5>
             </div>
             <div class="ibox-content">
 
-
+                <% @products.each do |product|%>
                 <div class="table-responsive">
                     <table class="table shoping-cart-table">
 
@@ -43,13 +43,10 @@
                             </td>
                             <td class="desc">
                                 <h3>
-                                    <a href="#" class="text-navy">
-                                        Desktop publishing software
-                                    </a>
+                                     <%= product.product_name %>
                                 </h3>
                                 <p class="small">
-                                    It is a long established fact that a reader will be distracted by the readable
-                                    content of a page when looking at its layout. The point of using Lorem Ipsum is
+                                     <%= product.description %>
                                 </p>
                                 <dl class="small m-b-none">
                                     <dt>Description lists</dt>
@@ -64,8 +61,8 @@
                             </td>
 
                             <td>
-                                $180,00
-                                <s class="small text-muted">$230,00</s>
+                                 <%= product.price %>
+                                <s class="small text-muted"> <%= product.product_name  %></s>
                             </td>
                             <td width="65">
                                 <input type="text" class="form-control" placeholder="1">
@@ -81,7 +78,8 @@
                 </div>
 
             </div>
-            <div class="ibox-content">
+            <%end%>
+            <!-- <div class="ibox-content">
                 <div class="table-responsive">
                     <table class="table shoping-cart-table">
 
@@ -130,8 +128,8 @@
                     </table>
                 </div>
 
-            </div>
-            <div class="ibox-content">
+            </div> -->
+            <!-- <div class="ibox-content">
                 <div class="table-responsive">
                     <table class="table shoping-cart-table">
 
@@ -180,8 +178,8 @@
                     </table>
                 </div>
 
-            </div>
-            <div class="ibox-content">
+            </div> -->
+            <!-- <div class="ibox-content">
                 <div class="table-responsive">
                     <table class="table shoping-cart-table">
 
@@ -229,8 +227,8 @@
                     </table>
                 </div>
 
-            </div>
-            <div class="ibox-content">
+            </div> -->
+           <!--  <div class="ibox-content">
                 <div class="table-responsive">
                     <table class="table shoping-cart-table">
 
@@ -278,7 +276,7 @@
                     </table>
                 </div>
 
-            </div>
+            </div> -->
             <div class="ibox-content">
 
                 <button class="btn btn-primary pull-right"><i class="fa fa fa-shopping-cart"></i> Checkout</button>
@@ -299,7 +297,7 @@
                                 Total
                             </span>
                 <h2 class="font-bold">
-                    $390,00
+                    $<%= current_cart.total %>
                 </h2>
 
                 <hr/>

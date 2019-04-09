@@ -135,5 +135,6 @@ Myapp::Application.routes.draw do
   get "cssanimations/index"
 
   get "landing/index"
+  get "/commerce/add_to_cart/:id" => "commerce#add_to_cart"
 
 end

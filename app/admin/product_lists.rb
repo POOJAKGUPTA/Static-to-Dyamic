@@ -1,5 +1,5 @@
 ActiveAdmin.register ProductList do
-	permit_params :product_name, :model , :description,:price ,:quantity,:status ,:action
+	permit_params :product_name, :model , :description,:price ,:quantity,:status ,:action ,:image
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
@@ -23,7 +23,10 @@ ActiveAdmin.register ProductList do
 		  f.input :status, as: :select, collection: ProductList::STATUS, include_blank: false
 		  f.input :action
 		  f.input :description
+		  f.input :image, as: :file
 		  actions
+
+		  
 	  end
 	end
 
