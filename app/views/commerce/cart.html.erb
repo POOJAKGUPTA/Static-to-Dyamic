@@ -29,9 +29,8 @@
                 <span class="pull-right">(<strong><%= current_cart.cart_items.count %></strong>) items</span>
                 <h5>Items in your cart</h5>
             </div>
+            <% @current_cart_product.each do |cart_product| %>
             <div class="ibox-content">
-
-                <% @products.each do |product|%>
                 <div class="table-responsive">
                     <table class="table shoping-cart-table">
 
@@ -43,10 +42,10 @@
                             </td>
                             <td class="desc">
                                 <h3>
-                                     <%= product.product_name %>
+                                    <%= cart_product.product_list.product_name %>
                                 </h3>
                                 <p class="small">
-                                     <%= product.description %>
+                                    <%= cart_product.product_list.description %>
                                 </p>
                                 <dl class="small m-b-none">
                                     <dt>Description lists</dt>
@@ -56,20 +55,21 @@
                                 <div class="m-t-sm">
                                     <a href="#" class="text-muted"><i class="fa fa-gift"></i> Add gift package</a>
                                     |
-                                    <a href="#" class="text-muted"><i class="fa fa-trash"></i> Remove item</a>
+                                    <a href="/commerce/destroy/<%= cart_product.id %>" class="text-muted"><i class="fa fa-trash"></i> Remove item</a>
                                 </div>
                             </td>
 
                             <td>
-                                 <%= product.price %>
-                                <s class="small text-muted"> <%= product.product_name  %></s>
+                                 $<%= cart_product.product_list.price %>
+                                <s class="small text-muted"> <%= cart_product.product_list.price %>
+                                </s>
                             </td>
-                            <td width="65">
-                                <input type="text" class="form-control" placeholder="1">
+                            <td width="85">
+                                <input type="text" class="form-control" placeholder="<%= cart_product.quantity %>">
                             </td>
                             <td>
                                 <h4>
-                                    $180,00
+                                   $<%= cart_product.subtotal %>
                                 </h4>
                             </td>
                         </tr>
@@ -280,7 +280,15 @@
             <div class="ibox-content">
 
                 <button class="btn btn-primary pull-right"><i class="fa fa fa-shopping-cart"></i> Checkout</button>
-                <button class="btn btn-white"><i class="fa fa-arrow-left"></i> Continue shopping</button>
+               
+                <div class="btn-group">
+                        <a href="/commerce/product_detail" class="btn btn-primary btn-sm"><i class="fa fa-cart-plus"></i> Continue Shopping</a>
+                </div>
+
+
+
+
+
 
             </div>
         </div>
@@ -306,7 +314,7 @@
                             </span>
                 <div class="m-t-sm">
                     <div class="btn-group">
-                        <a href="#" class="btn btn-primary btn-sm"><i class="fa fa-shopping-cart"></i> Checkout</a>
+                        <a href="https://paytm.com/paytmwallet" class="btn btn-primary btn-sm"><i class="fa fa-shopping-cart"></i> Checkout</a>
                         <a href="#" class="btn btn-white btn-sm"> Cancel</a>
                     </div>
                 </div>

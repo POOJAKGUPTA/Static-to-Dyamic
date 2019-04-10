@@ -136,5 +136,6 @@ Myapp::Application.routes.draw do
 
   get "landing/index"
   get "/commerce/add_to_cart/:id" => "commerce#add_to_cart"
+  get "/commerce/destroy/:id" => 'commerce#destroy'
 
 end
