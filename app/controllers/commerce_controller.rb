@@ -15,10 +15,7 @@ class CommerceController < ApplicationController
     @remove_product_from_cart = CartItem.find(params[:id])
     @remove_product_from_cart.destroy
     redirect_to "/commerce/cart"
-
-
   end
-
 
   def orders
   end
@@ -27,7 +24,7 @@ class CommerceController < ApplicationController
     @products = ProductList.all
   end
 
-  def payments
+  def payment
   end
 
   def cart
