@@ -4,6 +4,13 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   before_action :authenticate_user!
+
+  before_action :all_orders
+
+  def all_orders
+  @order = OrderHistory.all
+  end
+
 	
 
 	def current_cart
@@ -14,6 +21,9 @@ class ApplicationController < ActionController::Base
 		end
 	end
 	helper_method :current_cart
+
+
+
 
 
 end
