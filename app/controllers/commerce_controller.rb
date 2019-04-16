@@ -18,6 +18,7 @@ class CommerceController < ApplicationController
   end
 
   def orders
+    @order = OrderHistory.all 
   end
 
   def product_detail

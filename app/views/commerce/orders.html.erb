@@ -6,7 +6,7 @@
                 <a href="">Home</a>
             </li>
             <li>
-                <a>E-commerce</a>
+                <a href= "products_list">E-commerce</a>
             </li>
             <li class="active">
                 <strong>Orders</strong>
@@ -20,7 +20,7 @@
 <div class="wrapper wrapper-content animated fadeInRight ecommerce">
 
 
-<div class="ibox-content m-b-sm border-bottom">
+<!-- <div class="ibox-content m-b-sm border-bottom">
     <div class="row">
         <div class="col-sm-4">
             <div class="form-group">
@@ -66,7 +66,7 @@
         </div>
     </div>
 
-</div>
+</div> -->
 
 <div class="row">
     <div class="col-lg-12">
@@ -78,7 +78,7 @@
                     <tr>
 
                         <th>Order ID</th>
-                        <th data-hide="phone">Customer</th>
+                        <th data-hide="phone">Customer Transcation Id</th>
                         <th data-hide="phone">Amount</th>
                         <th data-hide="phone">Date added</th>
                         <th data-hide="phone,tablet" >Date modified</th>
@@ -88,24 +88,30 @@
                     </tr>
                     </thead>
                     <tbody>
+                    <% @order.each do |order|%>
                     <tr>
                         <td>
-                            3214
+                            <%= order.id %>
                         </td>
                         <td>
-                            Customer example
+                            <%= order.txn_id %>
                         </td>
                         <td>
-                            $500.00
+                            <%= order.total_ammount %>
                         </td>
                         <td>
-                            03/04/2015
+                           <%= order.created_at %>
                         </td>
                         <td>
-                            03/05/2015
+                           <%= order.updated_at %>
                         </td>
                         <td>
-                            <span class="label label-primary">Pending</span>
+                        <% if order.cart.is_ordered == true %>
+                           <span class="label label-primary">Done</span>
+                        <%else%>
+                             <span class="label label-danger">Canceled</span>
+                        <%end%>
+                           <!--  <span class="label label-primary">Pending</span> -->
                         </td>
                         <td class="text-right">
                             <div class="btn-group">
@@ -115,7 +121,8 @@
                             </div>
                         </td>
                     </tr>
-                    <tr>
+                    <% end %>
+                    <!-- <tr>
                         <td>
                             324
                         </td>
@@ -1005,7 +1012,7 @@
                                 <button class="btn-white btn btn-xs">Delete</button>
                             </div>
                         </td>
-                    </tr>
+                    </tr> -->
 
 
 

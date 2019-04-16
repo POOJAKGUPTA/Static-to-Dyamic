@@ -24,14 +24,14 @@ rescue_from Stripe::CardError, with: :catch_exception
 					  description: "#{current_user.email} has purchased product  ",
 					})
     	if @charge
-        @order_history = OrderHistory.new(txn_id: @charge.balance_transaction, charge_id: @charge.id,cart_id: cart.id)
+        @order_history = OrderHistory.new(txn_id: @charge.balance_transaction, charge_id: @charge.id,cart_id: cart.id,total_ammount: cart.total)
       else
       	redirect_to :back
       end 
     
     @order_history.save
     Cart.find(cart.id).update(is_ordered: true)
-		redirect_to "/commerce/product_detail"
+		redirect_to "/commerce/orders"
   end
 
   private
