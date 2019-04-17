@@ -20,6 +20,7 @@ class ApplicationController < ActionController::Base
 			return current_user.carts.create
 		end
 	end
+	
 	helper_method :current_cart
 
 

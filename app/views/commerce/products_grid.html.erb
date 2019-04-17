@@ -18,35 +18,39 @@
     </div>
 </div>
 <div class="wrapper wrapper-content animated fadeInRight">
+<% @products.each do |product|%>
     <div class="row">
         <div class="col-md-3">
             <div class="ibox">
                 <div class="ibox-content product-box">
 
                     <div class="product-imitation">
-                        [ INFO ]
+                         <%= image_tag product.image , size: "150x200"%>
                     </div>
                     <div class="product-desc">
                                 <span class="product-price">
-                                    $10
+                                   $<%= product.price  %>
                                 </span>
                         <small class="text-muted">Category</small>
-                        <a href="#" class="product-name"> Product</a>
+                        <a href="#" class="product-name"><%= product.product_name %></a>
 
 
 
                         <div class="small m-t-xs">
-                            Many desktop publishing packages and web page editors now.
+                             <%= product.description %>
                         </div>
                         <div class="m-t text-righ">
 
-                            <a href="#" class="btn btn-xs btn-outline btn-primary">Info <i class="fa fa-long-arrow-right"></i> </a>
+                            <a href="/commerce/product_detail/<%= product.id %>" class="btn btn-xs btn-outline btn-primary">Info <i class="fa fa-long-arrow-right"></i> </a>
+
+                            <a href="/commerce/add_to_cart/<%= product.id %>" class="btn btn-primary btn-sm"><i class="fa fa-cart-plus"></i> Add to cart</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="col-md-3">
+        <%end%>
+        <!-- <div class="col-md-3">
             <div class="ibox">
                 <div class="ibox-content product-box">
 
@@ -72,8 +76,8 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="col-md-3">
+        </div> -->
+        <!-- <div class="col-md-3">
             <div class="ibox">
                 <div class="ibox-content product-box active">
 
@@ -98,8 +102,8 @@
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
+            </div> -->
+        <!-- </div>
         <div class="col-md-3">
             <div class="ibox">
                 <div class="ibox-content product-box">
@@ -128,13 +132,13 @@
             </div>
         </div>
 
-
+ -->
 
 
 
 
     </div>
-    <div class="row">
+    <!-- <div class="row">
         <div class="col-md-3">
             <div class="ibox">
                 <div class="ibox-content product-box">
@@ -161,119 +165,8 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="col-md-3">
-            <div class="ibox">
-                <div class="ibox-content product-box">
-
-                    <div class="product-imitation">
-                        [ INFO ]
-                    </div>
-                    <div class="product-desc">
-                                <span class="product-price">
-                                    $10
-                                </span>
-                        <small class="text-muted">Category</small>
-                        <a href="#" class="product-name"> Product</a>
-
-
-
-                        <div class="small m-t-xs">
-                            Many desktop publishing packages and web page editors now.
-                        </div>
-                        <div class="m-t text-righ">
-
-                            <a href="#" class="btn btn-xs btn-outline btn-primary">Info <i class="fa fa-long-arrow-right"></i> </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-3">
-            <div class="ibox">
-                <div class="ibox-content product-box">
-
-                    <div class="product-imitation">
-                        [ INFO ]
-                    </div>
-                    <div class="product-desc">
-                                <span class="product-price">
-                                    $10
-                                </span>
-                        <small class="text-muted">Category</small>
-                        <a href="#" class="product-name"> Product</a>
-
-
-
-                        <div class="small m-t-xs">
-                            Many desktop publishing packages and web page editors now.
-                        </div>
-                        <div class="m-t text-righ">
-
-                            <a href="#" class="btn btn-xs btn-outline btn-primary">Info <i class="fa fa-long-arrow-right"></i> </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-3">
-            <div class="ibox">
-                <div class="ibox-content product-box">
-
-                    <div class="product-imitation">
-                        [ INFO ]
-                    </div>
-                    <div class="product-desc">
-                                <span class="product-price">
-                                    $10
-                                </span>
-                        <small class="text-muted">Category</small>
-                        <a href="#" class="product-name"> Product</a>
-
-
-
-                        <div class="small m-t-xs">
-                            Many desktop publishing packages and web page editors now.
-                        </div>
-                        <div class="m-t text-righ">
-
-                            <a href="#" class="btn btn-xs btn-outline btn-primary">Info <i class="fa fa-long-arrow-right"></i> </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    </div>
-    <div class="row">
-        <div class="col-md-3">
-            <div class="ibox">
-                <div class="ibox-content product-box">
-
-                    <div class="product-imitation">
-                        [ INFO ]
-                    </div>
-                    <div class="product-desc">
-                                <span class="product-price">
-                                    $10
-                                </span>
-                        <small class="text-muted">Category</small>
-                        <a href="#" class="product-name"> Product</a>
-
-
-
-                        <div class="small m-t-xs">
-                            Many desktop publishing packages and web page editors now.
-                        </div>
-                        <div class="m-t text-righ">
-
-                            <a href="#" class="btn btn-xs btn-outline btn-primary">Info <i class="fa fa-long-arrow-right"></i> </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-3">
+        </div> -->
+       <!--  <div class="col-md-3">
             <div class="ibox">
                 <div class="ibox-content product-box">
 
@@ -356,6 +249,117 @@
         </div>
 
     </div>
+    <div class="row">
+        <div class="col-md-3">
+            <div class="ibox">
+                <div class="ibox-content product-box">
+
+                    <div class="product-imitation">
+                        [ INFO ]
+                    </div>
+                    <div class="product-desc">
+                                <span class="product-price">
+                                    $10
+                                </span>
+                        <small class="text-muted">Category</small>
+                        <a href="#" class="product-name"> Product</a>
+
+
+
+                        <div class="small m-t-xs">
+                            Many desktop publishing packages and web page editors now.
+                        </div>
+                        <div class="m-t text-righ">
+
+                            <a href="#" class="btn btn-xs btn-outline btn-primary">Info <i class="fa fa-long-arrow-right"></i> </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+        <!-- <div class="col-md-3">
+            <div class="ibox">
+                <div class="ibox-content product-box">
+
+                    <div class="product-imitation">
+                        [ INFO ]
+                    </div>
+                    <div class="product-desc">
+                                <span class="product-price">
+                                    $10
+                                </span>
+                        <small class="text-muted">Category</small>
+                        <a href="#" class="product-name"> Product</a>
+
+
+
+                        <div class="small m-t-xs">
+                            Many desktop publishing packages and web page editors now.
+                        </div>
+                        <div class="m-t text-righ">
+
+                            <a href="#" class="btn btn-xs btn-outline btn-primary">Info <i class="fa fa-long-arrow-right"></i> </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="ibox">
+                <div class="ibox-content product-box">
+
+                    <div class="product-imitation">
+                        [ INFO ]
+                    </div>
+                    <div class="product-desc">
+                                <span class="product-price">
+                                    $10
+                                </span>
+                        <small class="text-muted">Category</small>
+                        <a href="#" class="product-name"> Product</a>
+
+
+
+                        <div class="small m-t-xs">
+                            Many desktop publishing packages and web page editors now.
+                        </div>
+                        <div class="m-t text-righ">
+
+                            <a href="#" class="btn btn-xs btn-outline btn-primary">Info <i class="fa fa-long-arrow-right"></i> </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="ibox">
+                <div class="ibox-content product-box">
+
+                    <div class="product-imitation">
+                        [ INFO ]
+                    </div>
+                    <div class="product-desc">
+                                <span class="product-price">
+                                    $10
+                                </span>
+                        <small class="text-muted">Category</small>
+                        <a href="#" class="product-name"> Product</a>
+
+
+
+                        <div class="small m-t-xs">
+                            Many desktop publishing packages and web page editors now.
+                        </div>
+                        <div class="m-t text-righ">
+
+                            <a href="#" class="btn btn-xs btn-outline btn-primary">Info <i class="fa fa-long-arrow-right"></i> </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div> -->
 
 
 

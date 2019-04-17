@@ -139,5 +139,8 @@ Myapp::Application.routes.draw do
   get "/commerce/destroy/:id" => 'commerce#destroy'
   get "/commerce/payment/" => 'commerce#payment'
   resources :charges, only: [:new, :create]
+  get"/commerce/product_detail/:id" => "commerce#product_detail"
+
+
 
 end

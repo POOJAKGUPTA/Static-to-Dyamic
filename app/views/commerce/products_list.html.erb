@@ -100,9 +100,10 @@
 
  -->
                             <td class="text-right">
-                            <div class="btn-group"><%= product.action %>
-                                <button class="btn-white btn btn-xs">View</button>
-                                <button class="btn-white btn btn-xs">Edit</button>
+                           <div class="btn-group"><%= product.action %>
+                            <a href="/commerce/product_detail/<%= product.id %>" class="btn-white btn btn-xs">View </a>
+
+                               
                             </div>
                      </tr> 
                       <% end %>  

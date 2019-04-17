@@ -2,6 +2,7 @@ class CommerceController < ApplicationController
   
 
   def products_grid
+    @products = ProductList.all
   end
 
   def products_list
@@ -22,7 +23,7 @@ class CommerceController < ApplicationController
   end
 
   def product_detail
-    @products = ProductList.all
+  @product = ProductList.find(params[:id])
   end
 
   def payment

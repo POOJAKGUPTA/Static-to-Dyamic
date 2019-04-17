@@ -17,7 +17,7 @@
   </div>
 </div>
 <div class="wrapper wrapper-content animated fadeInRight">
-  <% @products.each do |product|%>
+  
     <div class="row">
       <div class="col-lg-12">
         <div class="ibox product-detail">
@@ -27,34 +27,34 @@
                 <div class="product-images">
                   <div>
                     <div class="image-imitation">
-                      <%= image_tag product.image %>
+                      <%= image_tag @product.image %>
                     </div>
                   </div>
                   <div>
                     <div class="image-imitation">
-                      <%= image_tag product.image %>
+                      <%= image_tag @product.image %>
                     </div>
                   </div>
                   <div>
                     <div class="image-imitation">
-                      <%= image_tag product.image %>
+                      <%= image_tag @product.image %>
                     </div>
                   </div>
                 </div>
               </div>
               <div class="col-md-7">
                 <h2 class="font-bold m-b-xs">
-                  <%= product.product_name %>
+                  <%= @product.product_name %>
                  
                 </h2>
                 <small>Many desktop publishing packages and web page editors now.</small>
                 <div class="m-t-md">
-                  <h2 class="product-main-price">$<%= product.price %> <small class="text-muted">Exclude Tax</small> </h2>
+                  <h2 class="product-main-price">$<%= @product.price %> <small class="text-muted">Exclude Tax</small> </h2>
                 </div>
                 <hr>
                 <h4>Product description</h4>
                 <div class="small text-muted">
-                  <%= product.description %>
+                  <%= @product.description %>
                 </div>
                 <dl class="small m-t-md">
                   <dt>Description lists</dt>
@@ -68,7 +68,7 @@
                 <hr>
                 <div>
                   <div class="btn-group">
-                    <a href="/commerce/add_to_cart/<%= product.id %>" class="btn btn-primary btn-sm"><i class="fa fa-cart-plus"></i> Add to cart</a>
+                    <a href="/commerce/add_to_cart/<%= @product.id %>" class="btn btn-primary btn-sm"><i class="fa fa-cart-plus"></i> Add to cart</a>
                     <button class="btn btn-white btn-sm"><i class="fa fa-star"></i> Add to wishlist </button>
                     <button class="btn btn-white btn-sm"><i class="fa fa-envelope"></i> Contact with author </button>
                   </div>
@@ -85,7 +85,7 @@
         </div>
       </div>
     </div>
-  <%end%>
+
   <!-- <div class="row">
     <div class="col-lg-12">
       <div class="ibox product-detail">
