@@ -31,4 +31,4 @@
 /config/master.key
 /public/assets
 /public/uploads
-/vendor/assets
+#/vendor/assets
