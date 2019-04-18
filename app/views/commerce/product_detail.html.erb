@@ -69,8 +69,9 @@
                 <div>
                   <div class="btn-group">
                     <a href="/commerce/add_to_cart/<%= @product.id %>" class="btn btn-primary btn-sm"><i class="fa fa-cart-plus"></i> Add to cart</a>
-                    <button class="btn btn-white btn-sm"><i class="fa fa-star"></i> Add to wishlist </button>
+                    <a href="/commerce/add_to_wishlist/<%= @product.id %>" class="btn btn-white btn-sm"><i class="fa fa-star"></i> Add to wishlist</a>
                     <button class="btn btn-white btn-sm"><i class="fa fa-envelope"></i> Contact with author </button>
+                   <a href="/commerce/products_grid/" class="btn btn-white btn-sm">Back</a>
                   </div>
                 </div>
               </div>

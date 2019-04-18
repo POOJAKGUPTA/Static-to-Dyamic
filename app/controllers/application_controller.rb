@@ -23,6 +23,21 @@ class ApplicationController < ActionController::Base
 	
 	helper_method :current_cart
 
+	def current_wishlist
+		if current_user.wishlists.where(is_ordered: false).last
+			return current_user.wishlists.where(is_ordered: false).last
+		else
+			if !current_user.wishlists.any?
+				return current_user.wishlists.create
+			else
+				return current_user.wishlists.last
+			end
+		end
+	end
+	
+	helper_method :current_wishlist
+
+
 
 
 

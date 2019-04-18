@@ -128,6 +128,7 @@ end
   get "commerce/product_detail"
   get "commerce/orders"
   get "commerce/cart"
+
   get "commerce/payments"
 
   get "gallery/basic_gallery"
@@ -142,6 +143,8 @@ end
   get "/commerce/payment/" => 'commerce#payment'
   resources :charges, only: [:new, :create]
   get"/commerce/product_detail/:id" => "commerce#product_detail"
+  get "/commerce/add_to_wishlist/:id" => "commerce#add_to_wishlist"
+  get "/commerce/wishlist"
 
 
 

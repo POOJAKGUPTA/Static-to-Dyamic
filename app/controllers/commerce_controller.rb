@@ -18,6 +18,12 @@ class CommerceController < ApplicationController
     redirect_to "/commerce/cart"
   end
 
+   def destroy
+    @remove_product_from_wishlist = WishlistItem.find(params[:id])
+    @remove_product_from_wishlist.destroy
+    redirect_to "/commerce/wishlist"
+  end
+
   def orders
     @order = OrderHistory.all 
   end
@@ -33,11 +39,23 @@ class CommerceController < ApplicationController
     @current_cart_product = current_cart.cart_items
   end
 
+  def wishlist
+    @current_wishlist_product = current_wishlist.wishlist_items
+  end
+
+
   def add_to_cart
-   
     @product = ProductList.find(params[:id])
     current_cart.add_item(@product)
     redirect_to "/commerce/cart"
   end
 
+
+  def add_to_wishlist
+ 
+
+    @product = ProductList.find(params[:id])
+    current_wishlist.add_item_to_wishlist(@product)
+    redirect_to "/commerce/wishlist"
+  end
 end

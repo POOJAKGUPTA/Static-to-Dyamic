@@ -1,0 +1,159 @@
+<div class="row wrapper border-bottom white-bg page-heading">
+  <div class="col-lg-10">
+    <h2>Welcome to Your Wishlist</h2>
+    <ol class="breadcrumb">
+      <li>
+        <a href="index.html">Home</a>
+      </li>
+      <li>
+        <a>E-commerce</a>
+      </li>
+      <li class="active">
+        <strong>Wish List</strong>
+      </li>
+    </ol>
+  </div>
+  <div class="col-lg-2">
+  </div>
+</div>
+<div class="wrapper wrapper-content animated fadeInRight">
+  <div class="row">
+    <div class="col-md-9">
+      <div class="ibox">
+        <div class="ibox-title">
+          <span class="pull-right">(<strong><%= current_wishlist.wishlist_items.count %></strong>) items</span>
+          <h5>Items in your cart</h5>
+        </div>
+        <% @current_wishlist_product.each do |current_wishlist_product| %>
+        <div class="ibox-content">
+          <div class="table-responsive">
+            <table class="table shoping-cart-table">
+              <tbody>
+                <tr>
+                  <td width="90">
+                    <div class="cart-product-imitation">
+                      <%= image_tag(current_wishlist_product.product_list.image, size: "52x65", alt: "Edit Entry")  %>
+                    </div>
+                  </td>
+                  <td class="desc">
+                    <h3>
+                      <%= current_wishlist_product.product_list.product_name %>
+                    </h3>
+                    <p class="small">
+                      <%= current_wishlist_product.product_list.description %>
+                    </p>
+                    <dl class="small m-b-none">
+                      <dt>Description lists</dt>
+                      <dd>A description list is perfect for defining terms.</dd>
+                    </dl>
+                    <a href="/commerce/destroy/<%= current_wishlist_product.id %>" class="text-muted"><i class="fa fa-trash"></i> Remove item</a>
+                    </div>
+                  </td>
+                  <td>
+                    $<%= current_wishlist_product.product_list.price %>
+                    <s class="small text-muted"> <%= current_wishlist_product.product_list.price %>
+                    </s>
+                  </td>
+                  
+                  <td>
+                    <h4>
+
+                    </h4>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <%end%>
+        
+        <div class="ibox-content">
+                   <div class="btn-group">
+            <a href="/commerce/products_grid" class="btn btn-primary btn-sm"><i class="fa fa-cart-plus"></i> Continue Shopping</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="ibox">
+        <div class="ibox-title">
+          <h5>Cart Summary</h5>
+        </div>
+        <div class="ibox-content">
+          <span>
+          Total
+          </span>
+          <h2 class="font-bold">
+
+          </h2>
+          <hr/>
+          <span class="text-muted small">
+          *For United States, France and Germany applicable sales tax will be applied
+          </span>
+          <div class="m-t-sm">
+            <div class="btn-group">
+             
+             <!--  <%= form_tag charges_path do %>
+                <article>
+                  <% if flash[:error].present? %>
+                  <div id="error_explanation">
+                    <p><%= flash[:error] %></p>
+                  </div>
+                  <% end %>
+                  <%= hidden_field_tag :cart_id, nil, value: current_cart.id %>
+                  <label class="amount">
+                  <span>Amount:$<%= current_cart.total %></span>
+                  </label>
+                </article>
+                <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                  data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+                  data-description="A month's subscription"
+                  data-amount="<%= current_cart.total * 100 %>"
+                  data-locale="auto"></script>
+                <% end %> -->
+              <a href="#" class="btn btn-white btn-sm"> Cancel</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="ibox">
+        <div class="ibox-title">
+          <h5>Support</h5>
+        </div>
+        <div class="ibox-content text-center">
+          <h3><i class="fa fa-phone"></i> +43 100 783 001</h3>
+          <span class="small">
+          Please contact with us if you have any questions. We are avalible 24h.
+          </span>
+        </div>
+      </div>
+      <div class="ibox">
+        <div class="ibox-content">
+          <p class="font-bold">
+            Other products you may be interested
+          </p>
+          <hr/>
+          <div>
+            <a href="#" class="product-name"> Product 1</a>
+            <div class="small m-t-xs">
+              Many desktop publishing packages and web page editors now.
+            </div>
+            <div class="m-t text-righ">
+              <a href="#" class="btn btn-xs btn-outline btn-primary">Info <i class="fa fa-long-arrow-right"></i> </a>
+            </div>
+          </div>
+          <hr/>
+          <div>
+            <a href="#" class="product-name"> Product 2</a>
+            <div class="small m-t-xs">
+              Many desktop publishing packages and web page editors now.
+            </div>
+            <div class="m-t text-righ">
+              <a href="#" class="btn btn-xs btn-outline btn-primary">Info <i class="fa fa-long-arrow-right"></i> </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 1
+  is_ordered: false
+  order_id: 1
+  dummy: MyString
+
+two:
+  user_id: 1
+  is_ordered: false
+  order_id: 1
+  dummy: MyString
