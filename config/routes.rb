@@ -149,4 +149,6 @@ end
   patch "/appviews/my/update_profile/:updating_user_id" => "appviews#update_my_profile", as: :update_user_hello_profile
   get "/appviews/Contacts" => "appviews#contacts"
   get "/appviews/profile/:id" => "appviews#profile"
+  get "/appviews/show/" => "appviews#show"
+
 end
