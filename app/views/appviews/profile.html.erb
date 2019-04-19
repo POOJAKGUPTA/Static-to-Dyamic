@@ -26,16 +26,37 @@
             </div>
             <div>
                 <div class="ibox-content no-padding border-left-right">
-                    <img alt="image" class="img-responsive" src="<%= image_path('profile_big.jpg') %>">
+
+                    <%= image_tag @user.image.url %>
+
+                  <!--  <div class="product-images">
+                  <div>
+                    <div class="image-imitation">
+                      <%= image_tag @user.image, size: 150 %>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="image-imitation">
+                      <%= image_tag @user.image, size: 150 %>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="image-imitation">
+                      <%= image_tag @user.image, size: 150 %>
+                    </div>
+                  </div>
+                </div>
+ -->
+
                 </div>
                 <div class="ibox-content profile-content">
-                    <h4><strong>Monica Smith</strong></h4>
-                    <p><i class="fa fa-map-marker"></i> Riviera State 32/106</p>
+                    <h4><strong><%= @user.first_name%>  <%= @user.last_name%></strong></h4>
+                    <p><i class="fa fa-map-marker"></i><%= @user.current_address%></p>
                     <h5>
                         About me
                     </h5>
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitat.
+                    <%= @user.about%>
                     </p>
                     <div class="row m-t-lg">
                         <div class="col-md-4">

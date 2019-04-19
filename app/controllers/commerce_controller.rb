@@ -52,8 +52,6 @@ class CommerceController < ApplicationController
 
 
   def add_to_wishlist
- 
-
     @product = ProductList.find(params[:id])
     current_wishlist.add_item_to_wishlist(@product)
     redirect_to "/commerce/wishlist"
