@@ -7,10 +7,26 @@ class AppviewsController < ApplicationController
   def profile
     @user = User.all
     @user = User.find(params[:id])
+     @activities = PublicActivity::Activity.all
 
+      @user_traking = PublicActivity::Activity.where(trackable_type: "User", owner_id: current_user.id)
+      @cart_traking = PublicActivity::Activity.where(trackable_type: "CartItem")
+      @wishlist_traking = PublicActivity::Activity.where(trackable_type: "WishlistItem")
+      # If we want to use the same by making scope than un comment the following code and thean uncommet the code in activity.rb
+     # @user_traking = Activity.traking("User")
+     # @cart_traking = Activity.traking("CartItem")
+     # @wishlist_traking = Activity.traking("WishlistItem")
+     
+
+
+
+  end
+  def index
+  @activities = PublicActivity::Activity.all
   end
 
   def show
+   
   end
 
 

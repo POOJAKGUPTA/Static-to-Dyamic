@@ -6,7 +6,8 @@ class ApplicationController < ActionController::Base
   before_action :authenticate_user!
 
   before_action :all_orders
-
+	include PublicActivity::StoreController
+	
   def all_orders
   @order = OrderHistory.all
   end

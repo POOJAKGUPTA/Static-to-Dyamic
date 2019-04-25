@@ -12,7 +12,7 @@ class CommerceController < ApplicationController
   def product_edit
   end
 
-  def destroy
+  def destroy_cart_item
     @remove_product_from_cart = CartItem.find(params[:id])
     @remove_product_from_cart.destroy
     redirect_to "/commerce/cart"

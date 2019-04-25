@@ -139,7 +139,7 @@ end
 
   get "landing/index"
   get "/commerce/add_to_cart/:id" => "commerce#add_to_cart"
-  get "/commerce/destroy/:id" => 'commerce#destroy'
+  get "/commerce/destroy_cart_item/:id" => 'commerce#destroy_cart_item'
   get "/commerce/payment/" => 'commerce#payment'
   resources :charges, only: [:new, :create]
   get"/commerce/product_detail/:id" => "commerce#product_detail"

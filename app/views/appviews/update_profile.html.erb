@@ -6,7 +6,8 @@
 <%= form_for :asheesh, url: update_user_hello_profile_path(@my_user_for_update), method: :patch do |f| %>
 <div class="col-md-3">
    <div class="text-center">
-      <img src="//placehold.it/100" class="avatar img-circle" alt="avatar">
+      <!-- <img src="//placehold.it/100" class="avatar img-circle" alt="avatar"> -->
+      <%= image_tag @my_user_for_update.image, class: "avatar img-circle", width: 100 %>
       <h6>Upload a different photo...</h6>
       <%= f.file_field :image, class: "form-control" %>
    </div>
@@ -24,7 +25,7 @@
    <label class="col-lg-3 control-label">First name:</label>
    <div class="col-lg-8">
       <!-- <input class="form-control" type="text" value="Jane"> -->
-      <%= f.text_field :my_first_name, class: "form-control" %>
+      <%= f.text_field :my_first_name, class: "form-control", value: @my_user_for_update.first_name %>
    </div>
 </div>
 <div class="form-group">
@@ -32,45 +33,45 @@
 <div class="col-lg-8">
    <!--  <input class="form-control" type="text" value="Bishop">
       </div> -->
-   <%= f.text_field :my_last_name, class: "form-control" %>
+   <%= f.text_field :my_last_name, class: "form-control", value: @my_user_for_update.last_name %>
 </div>
 <div class="form-group">
    <label class="col-lg-3 control-label">Phone:</label>
    <div class="col-lg-8">
       <!-- <input class="form-control" type="text" value=""> -->
-      <%= f.number_field :my_phone_no, class: "form-control" %>
+      <%= f.number_field :my_phone_no, class: "form-control" , value: @my_user_for_update.phone%>
    </div>
 </div>
 <div class="form-group">
    <label class="col-lg-3 control-label">Company:</label>
    <div class="col-lg-8">
       <!--  <input class="form-control" type="text" value="janesemail@gmail.com"> -->
-      <%= f.text_field :company, class: "form-control" %>
+      <%= f.text_field :company, class: "form-control",value: @my_user_for_update.company  %>
    </div>
    <div class="form-group">
       <label class="col-md-3 control-label">Permanent Address:</label>
       <div class="col-md-8">
          <!-- <input class="form-control" type="text" value="janeuser">
             </div>
-                   -->         <%= f.text_field :my_permanent_address, class: "form-control" %>
+                   -->         <%= f.text_field :my_permanent_address, class: "form-control", value: @my_user_for_update.permanent_address %>
       </div>
       <div class="form-group">
          <label class="col-md-3 control-label">Current Location:</label>
          <div class="col-md-8">
-            <%= f.text_field :my_current_address, class: "form-control" %>
+            <%= f.text_field :my_current_address, class: "form-control" ,value: @my_user_for_update.current_address %>
             <!-- <input class="form-control" type="password" value="11111122333"> -->
          </div>
       </div>
       <div class="form-group">
          <label class="col-md-3 control-label">About:</label>
          <div class="col-md-8">
-            <%= f.text_area :my_about, class: "form-control" %>
+            <%= f.text_area :my_about, class: "form-control" , value: @my_user_for_update.about %>
             <!-- <input class="form-control" type="password" value="11111122333"> -->
          </div>
          <div class="form-group">
             <label class="col-md-3 control-label">Role:</label>
             <div class="col-md-8">
-               <%= f.text_field :my_role, class: "form-control" %>
+               <%= f.text_field :my_role, class: "form-control",value: @my_user_for_update.role  %>
                <!-- <input class="form-control" type="password" value="11111122333"> -->
             </div>
          </div>

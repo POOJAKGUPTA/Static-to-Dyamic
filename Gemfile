@@ -40,6 +40,7 @@ end
 gem 'byebug'
 
 gem 'rails_12factor', group: :production
+gem 'public_activity', '~> 1.6.3'
 
 
 # Use ActiveModel has_secure_password

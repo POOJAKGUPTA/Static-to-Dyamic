@@ -1,4 +1,7 @@
 class Wishlist < ActiveRecord::Base
+	include PublicActivity::Model
+  tracked  owner: ->(controller, model) { controller.current_user }
+	
 	has_many :wishlist_items
 
 	def add_item_to_wishlist(product)

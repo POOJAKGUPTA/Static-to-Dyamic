@@ -49,10 +49,11 @@
  -->
 
                 </div>
+                
                 <div class="ibox-content profile-content">
-                    <h4><strong><%= @user.first_name%>  <%= @user.last_name%></strong></h4>
-                    <p><i class="fa fa-map-marker"></i><%= @user.current_address%></p>
-                    <h5>
+                    <h2><strong><%= @user.first_name%>  <%= @user.last_name%></strong></h2>
+                    <strong><p><i class="fa fa-map-marker"></i><%= @user.current_address%></p>
+                    <h5></strong>
                         About me
                     </h5>
                     <p>
@@ -86,6 +87,7 @@
             </div>
         </div>
     </div>
+        
     <div class="col-md-8">
         <div class="ibox float-e-margins">
             <div class="ibox-title">
@@ -94,17 +96,7 @@
                     <a class="collapse-link">
                         <i class="fa fa-chevron-up"></i>
                     </a>
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <i class="fa fa-wrench"></i>
-                    </a>
-                    <ul class="dropdown-menu dropdown-user">
-                        <li>
-                            <a href="#">Config option 1</a>
-                        </li>
-                        <li>
-                            <a href="#">Config option 2</a>
-                        </li>
-                    </ul>
+                    
                     <a class="close-link">
                         <i class="fa fa-times"></i>
                     </a>
@@ -114,8 +106,86 @@
 
                 <div>
                     <div class="feed-activity-list">
+                   <!--  <% @activities.each do |activity|  %>
 
-                        <div class="feed-element">
+                
+                      <div class="activity">
+                      
+                      <br><%= activity.inspect%></br>
+                   
+
+                      <br><%= activity.try(:trackable_type)%></br>
+                      <br><%= activity.try(:trackable).try(:first_name)%></br>
+                       <br><%= activity.try(:key) %></br>
+
+
+                       <br> </br></div>
+
+                    <% end %> -->
+                    <h1>
+                    <strong> User Activities </strong></h1>
+
+                    <% @user_traking.each do |user_traking|  %>
+                      <div class="activity">
+                   
+
+                      <br><%= user_traking.try(:trackable_type)%></br>
+               
+                      <br><%= user_traking.try(:trackable).try(:first_name)%></br>
+                
+                       <br><%= user_traking.try(:key) %></br>
+
+
+                       <br> </br></div>
+
+                    <% end %>
+
+
+
+                    <h1>
+                    <strong> Cart Activities </strong></h1>
+
+
+
+                    <% @cart_traking.each do |cart_traking|  %>
+
+                      <div class="activity">
+                      
+                    
+                   
+
+                      <br><%= cart_traking.try(:trackable_type)%></br>
+                       <br><%= cart_traking.try(:owner_type).inspect%></br>
+                     
+                       <br><%= cart_traking.try(:key) %></br>
+
+
+                       <br> </br></div>
+
+                    <% end %>
+
+                    <h1>
+                    <strong> WishList Activities</strong></h1>
+
+
+                     <% @wishlist_traking.each do |wishlist_traking|  %>
+
+
+                      <div class="activity">
+                      
+        
+
+                      <br><strong><%= wishlist_traking.try(:trackable_type)%></br></strong>
+                       <br><%#= wishlist_traking.inspect %></br>
+                       <%= wishlist_traking.try(:owner_type)%>
+                       <br><%= wishlist_traking.try(:key) %></br>
+
+
+                       <br> </br></div>
+
+                    <% end %>
+
+                       <div class="feed-element">
                             <a href="#" class="pull-left">
                                 <img alt="image" class="img-circle" src="<%= image_path('a1.jpg') %>">
                             </a>
@@ -130,7 +200,7 @@
                             </div>
                         </div>
 
-                        <div class="feed-element">
+                         <!-- <div class="feed-element">
                             <a href="#" class="pull-left">
                                 <img alt="image" class="img-circle" src="<%= image_path('profile.jpg') %>">
                             </a>
@@ -226,6 +296,7 @@
                                 <small class="text-muted">3 days ago at 7:58 pm - 10.06.2014</small>
                             </div>
                         </div>
+                         -->
                     </div>
 
                     <button class="btn btn-primary btn-block m"><i class="fa fa-arrow-down"></i> Show More</button>

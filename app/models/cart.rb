@@ -1,6 +1,9 @@
 class Cart < ActiveRecord::Base
 	has_many :cart_items
 
+	include PublicActivity::Model
+  tracked  owner: ->(controller, model) { controller.current_cart }
+
 	def add_item(product)
 		item = self.cart_items.where(product_id: product.id).first
 		if item.present?

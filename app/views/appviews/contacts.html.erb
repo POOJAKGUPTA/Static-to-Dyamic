@@ -22,7 +22,7 @@
             <a href="/appviews/profile/<%= user.id%>">
             <div class="col-sm-4">
                 <div class="text-center">
-                    <img alt="image" class="img-circle m-t-xs img-responsive" src="<%= image_path('a2.jpg') %>">
+                   <%= image_tag user.image, class: "avatar img-circle", width: 100 %>
                     <div class="m-t-xs font-bold"><%= user.role %></div>
                 </div>
             </div>
